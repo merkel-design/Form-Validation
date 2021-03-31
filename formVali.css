@@ -17,7 +17,7 @@ body {
     position: relative;
     margin: 5vh auto;
     display: grid;
-    grid-template-rows: 10fr 13fr 10fr 10fr 10fr 10fr;
+    grid-template-rows: 10fr 10fr 10fr 10fr 10fr 10fr;
     grid-template-columns: 100fr;
     background-color: rgb(255, 255, 255); 
     border-radius: 10px;
@@ -35,20 +35,34 @@ body {
     transform: translate(0, -50%);
     text-align: center;
 }
+form label {
+    font-weight: bold;
+}
 .grid-form-item-position {
     width: 80%;
     height: 100%;
     text-align: left;
     margin: auto;
+    position: relative;
+    left: 5%;
 }
 .input-style {
-    width: 100%;
+    width: 90%;
     height: 30%;
+    border: 2px solid rgb(155, 155, 155);
+    border-radius: 4px;
+}
+/* This is the green success styling */
+.success-input {
+    border: 3px solid rgb(170, 255, 196);
 }
 #username-grid-item-parent {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
-    margin: 5% auto;
+    margin: 5% auto auto auto;
+}
+#username {
+    height: 33%;
 }
 #email-grid-item-parent {
     grid-row: 3 / 4;
@@ -83,3 +97,16 @@ body {
     line-height: 200%; 
     
 }
+.parent-grid i {
+    visibility: hidden;
+}
+.parent-grid .error-message {
+    visibility: hidden;
+}
+.fa-check-circle{
+    
+    color: rgb(183, 255, 183);
+    margin: auto;
+}
+
+.parent-grid 
