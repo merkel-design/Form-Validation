@@ -52,10 +52,7 @@ form label {
     border: 2px solid rgb(155, 155, 155);
     border-radius: 4px;
 }
-/* This is the green success styling */
-.success-input {
-    border: 3px solid rgb(170, 255, 196);
-}
+
 #username-grid-item-parent {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
@@ -97,6 +94,10 @@ form label {
     line-height: 200%; 
     
 }
+/* This is the green success styling */
+.grid-form-item-position.success input {
+    border: 3px solid rgb(170, 255, 196);
+}
 .parent-grid i {
     visibility: hidden;
 }
@@ -108,5 +109,3 @@ form label {
     color: rgb(183, 255, 183);
     margin: auto;
 }
-
-.parent-grid 
