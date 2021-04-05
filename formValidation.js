@@ -21,7 +21,7 @@ function checkInputs() {
 
     
     if (usernameValue.length > 3){
-        successForm(formItem);
+        successForm(username);
     }
     else if (usernameValue.length <= 3){
         errorForm(username, "Your username must be longer than 3 letters");
@@ -30,12 +30,12 @@ function checkInputs() {
 };
 
 
-function successForm(input) {
-    formItem.classList.add("success")
+function successForm(inputID) {
+    inputID.classList.add("grid-form-item-position-success")
 };
 
-function errorForm(input, message) {
-    input.classList.add("eror")
+function errorForm(inputID, message) {
+    inputID.classList.add("error")
     console.log(message)
 };
 

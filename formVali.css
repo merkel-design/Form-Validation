@@ -95,7 +95,7 @@ form label {
     
 }
 /* This is the green success styling */
-.grid-form-item-position.success input {
+.grid-form-item-position-success {
     border: 3px solid rgb(170, 255, 196);
 }
 .parent-grid i {
