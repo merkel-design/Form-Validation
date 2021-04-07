@@ -98,6 +98,9 @@ form label {
 .grid-form-item-position-success {
     border: 3px solid rgb(170, 255, 196);
 }
+.grid-form-item-position-error {
+    border: 3px solid rgb(247, 54, 54);
+}
 .parent-grid i {
     visibility: hidden;
 }
