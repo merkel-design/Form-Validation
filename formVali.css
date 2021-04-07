@@ -101,14 +101,14 @@ form label {
 .grid-form-item-position-error {
     border: 3px solid rgb(247, 54, 54);
 }
-.parent-grid i {
+.hiding-toggle {
     visibility: hidden;
 }
 .parent-grid .error-message {
     visibility: hidden;
 }
 .fa-check-circle{
-    
+   
     color: rgb(183, 255, 183);
     margin: auto;
 }
