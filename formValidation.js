@@ -6,6 +6,7 @@ const email = document.getElementById('email');
 const formItem = document.getElementsByClassName('grid-form-item-position');
 const usernameCheckmark = document.getElementById('usernameCheckmark');
 const emailCheckmark = document.getElementById('emailCheckmark');
+// const usernameExclamation = document.getElementById('usernameExclamation');
 
 
 
