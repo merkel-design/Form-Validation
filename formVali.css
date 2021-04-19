@@ -101,9 +101,10 @@ form label {
 .grid-form-item-position-error {
     border: 3px solid rgb(247, 54, 54);
 }
-.hiding-toggle {
+.hidingToggle {
     visibility: hidden;
 }
+
 .parent-grid .error-message {
     visibility: hidden;
 }

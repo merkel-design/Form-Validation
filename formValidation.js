@@ -4,6 +4,10 @@ const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 const email = document.getElementById('email');
 const formItem = document.getElementsByClassName('grid-form-item-position');
+const usernameCheckmark = document.getElementById('usernameCheckmark');
+const emailCheckmark = document.getElementById('emailCheckmark');
+
+
 
 
 form.addEventListener('submit', (e) => {
@@ -25,23 +29,23 @@ function checkInputs() {
     
     // USERNAME
     if (usernameValue.length > 3){
-        successForm(username);
-        //, username-grid-item-parent
+        successForm(username, usernameCheckmark);
+        
     }
     else if (usernameValue.length <= 3){
-        errorForm(username, "Your username must be longer than 3 letters");
+        errorForm(username, "Your username must be longer than 3 letters", usernameCheckmark);
     }
     
     // EMAIL
 
     if (emailValue === '') {
-        errorForm(email, "Your email cannot be blank.");
+        errorForm(email, "Your email cannot be blank.", emailCheckmark);
     }
     else if (!validateEmail(emailValue)){
-        errorForm(email, "Email is not valid");
+        errorForm(email, "Email is not valid", emailCheckmark);
     }
     else {
-        successForm(email)
+        successForm(email, emailCheckmark)
     };
 
 
@@ -61,18 +65,18 @@ function successForm(inputID, checkmarkParent) {
     inputID.classList.remove("grid-form-item-position-error");
     inputID.classList.add("grid-form-item-position-success");
 
-    //username-grid-item-parent
+    checkmarkParent.classList.remove("hidingToggle");
 
-    // checkmarkParent.i.classList.remove("hiding-toggle");
 
     
     
 };
 
-function errorForm(inputID, message) {
+function errorForm(inputID, message, checkmarkParent) {
     //adds the red border
     inputID.classList.add("grid-form-item-position-error");
     inputID.classList.remove("grid-form-item-position-success");
+    checkmarkParent.classList.add("hidingToggle");
     console.log(message);
 };
 
