@@ -109,10 +109,20 @@ form label {
     visibility: hidden;
 }
 .fa-check-circle{
+    position: absolute;
     color: rgb(183, 255, 183);
     margin: auto;
+    top: 20%;
+    right: 5%;
+
 }
 .fa-exclamation-circle {
+    position: absolute;
+    /* top: 40px;
+    right: auto; */
     color: rgb(247, 54, 54);
     margin: auto;
+    top: 20%;
+    right: 5%;
+    
 }

@@ -30,23 +30,23 @@ function checkInputs() {
     
     // USERNAME
     if (usernameValue.length > 3){
-        successForm(username, usernameCheckmark);
+        successForm(username, usernameCheckmark, usernameExclamation);
         
     }
     else if (usernameValue.length <= 3){
-        errorForm(username, "Your username must be longer than 3 letters", usernameCheckmark);
+        errorForm(username, "Your username must be longer than 3 letters", usernameExclamation, usernameCheckmark);
     }
     
     // EMAIL
 
     if (emailValue === '') {
-        errorForm(email, "Your email cannot be blank.", emailCheckmark);
+        errorForm(email, "Your email cannot be blank.", emailExclamation, emailCheckmark);
     }
     else if (!validateEmail(emailValue)){
-        errorForm(email, "Email is not valid", emailCheckmark);
+        errorForm(email, "Email is not valid", emailExclamation, emailCheckmark);
     }
     else {
-        successForm(email, emailCheckmark)
+        successForm(email, emailCheckmark, emailExclamation)
     };
 
 
@@ -60,24 +60,32 @@ function validateEmail(email) {
 }
 
 
-function successForm(inputID, checkmarkParent) {
+function successForm(inputID, checkmarkParent, removeIcon) {
     //adds the green border 
     //then if the error class was added before this instant, the error class is removed
+    //removeIcon is there to remove the prior exclamation mark
+
     inputID.classList.remove("grid-form-item-position-error");
     inputID.classList.add("grid-form-item-position-success");
 
     checkmarkParent.classList.remove("hidingToggle");
+    removeIcon.classList.add("hidingToggle");
 
 
     
     
 };
 
-function errorForm(inputID, message, checkmarkParent) {
+function errorForm(inputID, message, exclamationParent, removeIcon) {
     //adds the red border
+    //removeIcon is there to remove the prior check mark
     inputID.classList.add("grid-form-item-position-error");
     inputID.classList.remove("grid-form-item-position-success");
-    checkmarkParent.classList.add("hidingToggle");
+
+    exclamationParent.classList.remove("hidingToggle");
+    removeIcon.classList.add("hidingToggle");
+
+
     console.log(message);
 };
 
