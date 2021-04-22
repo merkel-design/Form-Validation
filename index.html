@@ -34,8 +34,8 @@
 		<!-- password1 -->
 					<div class="grid-form-item-position" id="password-grid-item-parent">
 						<label for="password1" id="password-label">Password</label>
-						<input type="text" class="input-style" id="password1" placeholder="Enter your password">
-
+						<input type="password" class="input-style" id="password1" placeholder="Enter your password">
+						<i id="pass1Eye" onclick="showPassword(password1,pass1Eye)"class="far fa-eye-slash togglePasswordCheckbox"></i>
 						<i class="fas fa-check-circle hidingToggle" id="password1Checkmark"></i>
 						<i class="fas fa-exclamation-circle hidingToggle" id="password1Exclamation"></i>
 
@@ -45,8 +45,8 @@
 		<!-- password2 -->
 					<div class="grid-form-item-position" id="confirm-grid-item-parent">
 						<label for="password2" id="password-label">Confirm Password</label>
-						<input type="text" class="input-style" id="password2" placeholder="re-enter your password">
-
+						<input type="password" class="input-style" id="password2" placeholder="re-enter your password">
+						<i id="pass2Eye" onclick="showPassword(password2,pass2Eye)"class="far fa-eye-slash togglePasswordCheckbox"></i>
 						<i class="fas fa-check-circle hidingToggle" id="password2Checkmark"></i>
 						<i class="fas fa-exclamation-circle hidingToggle" id="password2Exclamation"></i>
 

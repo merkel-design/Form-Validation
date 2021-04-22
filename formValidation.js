@@ -74,7 +74,7 @@ function checkInputs() {
             
            
         }
-    }
+    };
 
 
 // End of function
@@ -103,6 +103,8 @@ function successForm(inputID, checkmarkParent, removeIcon, messageContainer) {
     
 };
 
+
+
 function errorForm(inputID, message, messageContainer, exclamationParent, removeIcon) {
     //adds the red border
     //removeIcon is there to remove the prior check mark
@@ -114,10 +116,34 @@ function errorForm(inputID, message, messageContainer, exclamationParent, remove
 
     (messageContainer).textContent = message;
 
+};
 
+
+
+
+function showPassword(x, button) {
+
+//this toggles the EYE
+if (button.className === 'far fa-eye-slash togglePasswordCheckbox') {
     
+    button.className = 'far fa-eye togglePasswordCheckbox';
+}
+else if (button.className === 'far fa-eye togglePasswordCheckbox') {
+
+    button.className = 'far fa-eye-slash togglePasswordCheckbox';
+}
+else {
+    button.className = 'far fa-eye-slash togglePasswordCheckbox'
+}
 
 
-    console.log(message);
+
+//this shows the password text on the input element
+    if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+
 };
 

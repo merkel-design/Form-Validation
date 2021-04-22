@@ -21,6 +21,7 @@ body {
     grid-template-columns: 100fr;
     background-color: rgb(255, 255, 255); 
     border-radius: 10px;
+    
 }
 #header {
     grid-row: 1 / 2;
@@ -39,18 +40,21 @@ form label {
     font-weight: bold;
 }
 .grid-form-item-position {
-    width: 80%;
+    width: 70%;
     height: 100%;
     text-align: left;
     margin: auto;
     position: relative;
-    left: 5%;
+    /* left: 5%; */
+    overflow: visible;
 }
 .input-style {
     width: 90%;
     height: 30%;
     border: 2px solid rgb(155, 155, 155);
     border-radius: 4px;
+    position: relative;
+    left: 5%;
 }
 
 #username-grid-item-parent {
@@ -58,9 +62,9 @@ form label {
     grid-column: 1 / 2;
     margin: 5% auto auto auto;
 }
-#username {
+/* #username {
     height: 33%;
-}
+} */
 #email-grid-item-parent {
     grid-row: 3 / 4;
     grid-column: 1 / 2;
@@ -94,7 +98,7 @@ form label {
     line-height: 200%; 
     
 }
-/* This is the green success styling */
+
 .grid-form-item-position-success {
     border: 3px solid rgb(170, 255, 196);
 }
@@ -113,19 +117,27 @@ form label {
     color: rgb(183, 255, 183);
     margin: auto;
     top: 20%;
-    right: 5%;
+    right: -5%;
 
 }
 .fa-exclamation-circle {
     position: absolute;
+    
     /* top: 40px;
     right: auto; */
     color: rgb(247, 54, 54);
     margin: auto;
     top: 20%;
-    right: 5%;
+    right: -5%;
     
 }
 .messageFormat {
     color: rgb(247, 54, 54);
+}
+
+.togglePasswordCheckbox {
+    position: relative;
+    right: -18%;
+    border: none;
+    background-color: white;
 }
