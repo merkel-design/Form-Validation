@@ -6,8 +6,8 @@ const email = document.getElementById('email');
 const formItem = document.getElementsByClassName('grid-form-item-position');
 const usernameCheckmark = document.getElementById('usernameCheckmark');
 const emailCheckmark = document.getElementById('emailCheckmark');
-// const usernameExclamation = document.getElementById('usernameExclamation');
-
+const usernameErrorMessage = document.getElementById('usernameErrorMessage');
+const emailErrorMessage =  document.getElementById('emailErrorMessage');
 
 
 
@@ -24,29 +24,26 @@ function checkInputs() {
     const passwordValue = password.value.trim();
     const password2Value = password2.value.trim();
 
- 
-
-    
     
     // USERNAME
     if (usernameValue.length > 3){
-        successForm(username, usernameCheckmark, usernameExclamation);
+        successForm(username, usernameCheckmark, usernameExclamation, usernameErrorMessage);
         
     }
     else if (usernameValue.length <= 3){
-        errorForm(username, "Your username must be longer than 3 letters", usernameExclamation, usernameCheckmark);
+        errorForm(username, "Your username must be longer than 3 letters", usernameErrorMessage, usernameExclamation, usernameCheckmark);
     }
     
     // EMAIL
 
     if (emailValue === '') {
-        errorForm(email, "Your email cannot be blank.", emailExclamation, emailCheckmark);
+        errorForm(email, "Your email cannot be blank.", emailErrorMessage, emailExclamation, emailCheckmark);
     }
     else if (!validateEmail(emailValue)){
-        errorForm(email, "Email is not valid", emailExclamation, emailCheckmark);
+        errorForm(email, "Email is not valid", emailErrorMessage, emailExclamation, emailCheckmark);
     }
     else {
-        successForm(email, emailCheckmark, emailExclamation)
+        successForm(email, emailCheckmark, emailExclamation, emailErrorMessage)
     };
 
 
@@ -60,7 +57,7 @@ function validateEmail(email) {
 }
 
 
-function successForm(inputID, checkmarkParent, removeIcon) {
+function successForm(inputID, checkmarkParent, removeIcon, messageContainer) {
     //adds the green border 
     //then if the error class was added before this instant, the error class is removed
     //removeIcon is there to remove the prior exclamation mark
@@ -71,12 +68,12 @@ function successForm(inputID, checkmarkParent, removeIcon) {
     checkmarkParent.classList.remove("hidingToggle");
     removeIcon.classList.add("hidingToggle");
 
-
+    (messageContainer).innerHTML = " ";
     
     
 };
 
-function errorForm(inputID, message, exclamationParent, removeIcon) {
+function errorForm(inputID, message, messageContainer, exclamationParent, removeIcon) {
     //adds the red border
     //removeIcon is there to remove the prior check mark
     inputID.classList.add("grid-form-item-position-error");
@@ -84,6 +81,11 @@ function errorForm(inputID, message, exclamationParent, removeIcon) {
 
     exclamationParent.classList.remove("hidingToggle");
     removeIcon.classList.add("hidingToggle");
+
+    (messageContainer).textContent = message;
+
+
+    
 
 
     console.log(message);
