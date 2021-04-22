@@ -1,6 +1,6 @@
 const form = document.getElementById('form');
 const username = document.getElementById('username');
-const password = document.getElementById('password');
+const password1 = document.getElementById('password1');
 const password2 = document.getElementById('password2');
 const email = document.getElementById('email');
 const formItem = document.getElementsByClassName('grid-form-item-position');
@@ -8,6 +8,9 @@ const usernameCheckmark = document.getElementById('usernameCheckmark');
 const emailCheckmark = document.getElementById('emailCheckmark');
 const usernameErrorMessage = document.getElementById('usernameErrorMessage');
 const emailErrorMessage =  document.getElementById('emailErrorMessage');
+
+const password1message = document.getElementById('password1message');
+const password2message = document.getElementById('password2message');
 
 
 
@@ -21,8 +24,10 @@ function checkInputs() {
     
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
-    const password2Value = password2.value.trim();
+
+     const password1Value = password1.value.trim();
+     const password2Value = password2.value.trim();
+    
 
     
     // USERNAME
@@ -45,6 +50,31 @@ function checkInputs() {
     else {
         successForm(email, emailCheckmark, emailExclamation, emailErrorMessage)
     };
+
+    //PASSWORDS
+    
+
+    for (let i = 0; i < password1Value.length; i++) {
+        let password1splitted = password1Value.split('');
+        let password2splitted = password2Value.split('');
+
+        
+        if (password1splitted[i] !== password2splitted[i]) {
+            errorForm(password1, "The passwords must match", password1message, password1Exclamation, password1Checkmark);
+            errorForm(password2,"The passwords must match", password2message, password2Exclamation, password2Checkmark);
+            
+        }
+        else if (password1splitted.length !== password2splitted.length) {
+            errorForm(password1,"The passwords must match", password1message, password1Exclamation, password1Checkmark);
+            errorForm(password2,"The passwords must match", password2message, password2Exclamation, password2Checkmark);
+        }
+        else {
+            successForm(password1, password1Checkmark, password1Exclamation, password1message);
+            successForm(password2, password2Checkmark, password2Exclamation, password2message);
+            
+           
+        }
+    }
 
 
 // End of function
