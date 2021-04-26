@@ -12,12 +12,18 @@ const emailErrorMessage =  document.getElementById('emailErrorMessage');
 const password1message = document.getElementById('password1message');
 const password2message = document.getElementById('password2message');
 
+let usernameCheck = null;
+let emailCheck = null;
+let password1Check = null;
+let password2Check = null;
+
 
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     checkInputs();
+    FormChecker();
 });
 
 function checkInputs() {
@@ -33,22 +39,27 @@ function checkInputs() {
     // USERNAME
     if (usernameValue.length > 3){
         successForm(username, usernameCheckmark, usernameExclamation, usernameErrorMessage);
+        usernameCheck = true;
         
     }
     else if (usernameValue.length <= 3){
         errorForm(username, "Your username must be longer than 3 letters", usernameErrorMessage, usernameExclamation, usernameCheckmark);
+        usernameCheck = false;
     }
     
     // EMAIL
 
     if (emailValue === '') {
         errorForm(email, "Your email cannot be blank.", emailErrorMessage, emailExclamation, emailCheckmark);
+        emailCheck = false;
     }
     else if (!validateEmail(emailValue)){
         errorForm(email, "Email is not valid", emailErrorMessage, emailExclamation, emailCheckmark);
+        emailCheck = false;
     }
     else {
         successForm(email, emailCheckmark, emailExclamation, emailErrorMessage)
+        emailCheck = true;
     };
 
     //PASSWORDS
@@ -62,17 +73,25 @@ function checkInputs() {
         if (password1splitted[i] !== password2splitted[i]) {
             errorForm(password1, "The passwords must match", password1message, password1Exclamation, password1Checkmark);
             errorForm(password2,"The passwords must match", password2message, password2Exclamation, password2Checkmark);
+
+            password1Check = false;
+            password2Check = false;
+
             
         }
         else if (password1splitted.length !== password2splitted.length) {
             errorForm(password1,"The passwords must match", password1message, password1Exclamation, password1Checkmark);
             errorForm(password2,"The passwords must match", password2message, password2Exclamation, password2Checkmark);
+
+            password1Check = false;
+            password2Check = false;
         }
         else {
             successForm(password1, password1Checkmark, password1Exclamation, password1message);
             successForm(password2, password2Checkmark, password2Exclamation, password2message);
-            
-           
+
+            password1Check = true;
+            password2Check = true;
         }
     };
 
@@ -147,3 +166,16 @@ else {
 
 };
 
+//This function will test to see if all the fields have been successful and will send the user to the completed page once the form has been filled out correctly
+
+function FormChecker() {
+    if (usernameCheck === true && emailCheck === true && password1Check === true && password2Check === true) {
+        document.getElementById('successIsHidden').classList.remove("hideMe");
+    }
+};
+
+
+// let usernameCheck = null;
+// let emailCheck = null;
+// let password1Check = null;
+// let password2Check = null;

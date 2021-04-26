@@ -4,18 +4,27 @@
     <link type="text/css" rel="stylesheet" href="formVali.css">
 	<head>
 		<script src="https://kit.fontawesome.com/5947c3ded7.js" crossorigin="anonymous"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
 		<title>Form Validation</title>
 	</head>
 	<body>
 
+		<div class="successContainer hideMe" id="successIsHidden">
+			<div class="successMessage"><p>Success! Thank you!</p></div>
+		</div>
+
 		<form id="form">
 			<div class="parent-grid">
-				<div id="header"><h2>Create Account</h2></div>
+				<div id="header"><p>Create Account</p></div>
 
 			
 		<!-- username -->
 					<div class="grid-form-item-position" id="username-grid-item-parent">
+						<br>
 						<label for="username" id="username-label">Username</label>
+						<br>
 						<input type="text" class="input-style formItem" id="username" placeholder="Enter your username" >
 						<i class="fas fa-check-circle hidingToggle" id="usernameCheckmark"></i>
 						<i class="fas fa-exclamation-circle hidingToggle" id="usernameExclamation"></i>
@@ -25,6 +34,7 @@
 		<!-- EMAIL -->
 					<div class="grid-form-item-position" id="email-grid-item-parent">
 						<label for="email" id="email-label">Email</label>
+						<br>
 						<input type="text" class="input-style" id="email" placeholder="Enter your email">
 						<i class="fas fa-check-circle hidingToggle" id="emailCheckmark"></i>
 						<i class="fas fa-exclamation-circle hidingToggle" id="emailExclamation"></i>
@@ -34,6 +44,7 @@
 		<!-- password1 -->
 					<div class="grid-form-item-position" id="password-grid-item-parent">
 						<label for="password1" id="password-label">Password</label>
+						<br>
 						<input type="password" class="input-style" id="password1" placeholder="Enter your password">
 						<i id="pass1Eye" onclick="showPassword(password1,pass1Eye)"class="far fa-eye-slash togglePasswordCheckbox"></i>
 						<i class="fas fa-check-circle hidingToggle" id="password1Checkmark"></i>

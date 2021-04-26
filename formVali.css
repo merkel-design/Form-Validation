@@ -10,6 +10,7 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 .parent-grid {
     height: 90vh;
@@ -23,14 +24,44 @@ body {
     border-radius: 10px;
     
 }
+.successMessage {
+    position: relative;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    top: 40%;
+    font-weight: 800;
+    font-size: 1.9rem;
+    letter-spacing: 4px;
+    color:rgb(255, 255, 255);
+    
+}
+.successContainer {
+    position: absolute;
+    height: 20vh;
+    width: 50vw;
+    z-index: 999;
+    top: 20vh;
+    left: 25%;
+
+    background: rgb(43,64,33);
+    background: linear-gradient(41deg, rgba(43,64,33,0.2553396358543417) 0%, rgba(130,213,125,0.8127626050420168) 21%, rgba(93,157,139,0.8463760504201681) 49%, rgba(148,244,212,0.8099614845938375) 76%, rgba(21,38,37,0.2553396358543417) 100%); 
+}
+.hideMe {
+    visibility: hidden;
+}
 #header {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     background-color: rgb(248, 248, 248);
     height: 100%;
     width: 100%;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    
 }
-#header h2 {
+#header p {
+    font-size: 2.5rem;
     position: relative;
     top: 50%;
     transform: translate(0, -50%);
@@ -57,10 +88,12 @@ form label {
     left: 5%;
 }
 
+
+
 #username-grid-item-parent {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
-    margin: 5% auto auto auto;
+    margin: auto auto auto auto;
 }
 /* #username {
     height: 33%;
@@ -87,16 +120,24 @@ form label {
     
 }
 #submit-button {
-    background-color: rgb(44, 207, 248);
+    font-weight: 600;
+    color:rgb(68, 72, 75);
+    border: none;
     border-radius: 6px;
-    width: 100%;
+    width: 50%;
     height: 30%;
     text-align: center;
     position: relative;
     top: 50%;
     transform: translate(0, -50%);
     line-height: 200%; 
-    
+    left: 25%;
+    background: rgb(188,133,209);
+    background: linear-gradient(41deg, rgba(188,133,209,1) 0%, rgba(160,212,240,1) 49%, rgba(214,250,238,1) 76%, rgba(229,255,253,1) 100%);
+    cursor: pointer;  
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 .grid-form-item-position-success {
